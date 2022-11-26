@@ -1,6 +1,10 @@
 <div class="row">
     <div class="col-md-12">
-        <h2>Employees</h2>
+        <h2>Employees
+
+            <a href="/employees/add" class="btn btn-success pull-right">Add New Employee</a>
+
+        </h2>
         <hr />
         <div class="table-responsive">
             <table class="table">
@@ -14,6 +18,7 @@
                         <th>Status</th>
                         <th>Department</th>
                         <th>Hired On</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,11 +27,14 @@
                         <td>{{this.employeeNum}}</td>
                         <td><a href="/employee/{{this.employeeNum}}">{{this.firstName}} {{this.lastName}}</a></td>
                         <td><a href="mailto:{{this.email}}">{{this.email}}</a></td>
-                        <td>{{this.addressStreet}} <br> {{this.addressCity}}, {{this.addressState}} <br>{{this.addressPostal}}</td>
-                        <td><a href="/employees?manager={{this.employeeManagerNum}}">{{this.employeeManagerNum}}</a></td>
+                        <td>{{this.addressStreet}} <br> {{this.addressCity}}, {{this.addressState}}
+                            <br>{{this.addressPostal}}</td>
+                        <td><a href="/employees?manager={{this.employeeManagerNum}}">{{this.employeeManagerNum}}</a>
+                        </td>
                         <td><a href="/employees?status={{this.status}}">{{this.status}}</a></td>
                         <td><a href="/employees?department={{this.department}}">{{this.department}}</a></td>
                         <td>{{this.hireDate}}</td>
+                        <td><a class="btn btn-danger" onclick="return confirm('You are about to delete the Employee Details. Are you sure?')" href="/employees/delete/{{this.employeeNum}}">Delete</a></td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -35,7 +43,7 @@
     </div>
     {{#unless employees}}
     <div class="col-md-12 text-center">
-        <strong>{{message}}</strong> 
+        <strong>{{message}}</strong>
     </div>
     {{/unless}}
 </div>
