@@ -4,7 +4,7 @@
 * of this assignment has been copied manually or electronically from any other source
 * (including 3rd party web sites) or distributed to other students. *
 * Name: Gurtarnjit Singh       Student ID: 156805210 Date: 11/27/2022 *
-* Online (Heroku) Link: https://still-atoll-84567.herokuapp.com/
+* Online (Cyclic) Link: https://prickly-undershirt-fish.cyclic.app/
 * ********************************************************************************/
 
 const HTTP_PORT = process.env.PORT || 8080;
